@@ -1,109 +1,120 @@
-﻿#include <iostream>
-#include <vector>
-#include <ctime>
-#include <limits>
-#include <cctype> // Для isdigit функции
-
-const int MAX_DIGIT = 7; // Максимальная цифра в семизначных числах
-const int NUM_DIGITS = 10; // Количество возможных цифр (0-9)
-
-// Функция для установки битов в битовом массиве на основе числа
-void setBits(std::vector<bool>& bitArray, int num) {
-    while (num > 0) {
-        int digit = num % 10; // Получаем последнюю цифру числа
-        bitArray[digit] = true; // Устанавливаем соответствующий бит в true
-        num /= 10; // Убираем последнюю цифру числа
-    }
-}
-
-// Функция для сортировки семизначных чисел на основе битового массива
-void sortNumbers(std::vector<int>& numbers, const std::vector<bool>& bitArray) {
-    std::vector<int> sortedNumbers;
-    for (int num : numbers) {
-        bool canInsert = true;
-        int copy = num;
-        while (copy > 0) {
-            int digit = copy % 10; // Получаем последнюю цифру числа
-            if (!bitArray[digit]) {
-                canInsert = false; // Если бит не установлен, число нельзя вставить
-                break;
-            }
-            copy /= 10; // Убираем последнюю цифру числа
-        }
-        if (canInsert) {
-            sortedNumbers.push_back(num);
-        }
-    }
-    numbers = sortedNumbers;
-}
+#include <iostream>
+#include <bitset>
 
 int main() {
-    std::vector<bool> bitArray(NUM_DIGITS, false); // Битовый массив для цифр 0-9
-    std::vector<int> numbers; // Список семизначных чисел
-
+    setlocale(LC_ALL, "Russian"); // Установка русской локали
     while (true) {
-        // Ввод семизначных чисел с клавиатуры
-        int num;
-        std::cout << "Введите семизначные числа (для завершения введите 0):\n";
-        while (true) {
-            std::string input;
-            std::cin >> input;
+        std::cout << "Выберите упражнение (1-5) или 0 для выхода:" << std::endl;
+        std::cout << "1. Установить 1-ый, 5-ый и 7-ой бит в 1, используя маску (вариант 1)." << std::endl;
+        std::cout << "2. Обнулить 2, 3, 4, 5 биты, используя маску (вариант 2)." << std::endl;
+        std::cout << "3. Умножить значение на 16." << std::endl;
+        std::cout << "4. Разделить значение на 8." << std::endl;
+        std::cout << "5. Установить n-ый бит в 1, используя маску (вариант 1)." << std::endl;
+        int exercise;
+        std::cin >> exercise;
 
-            if (input == "0") {
-                break;
-            }
-
-            bool validInput = true;
-
-            for (char digit : input) {
-                if (!std::isdigit(digit)) {
-                    std::cout << "Введите корректное семизначное число.\n";
-                    validInput = false;
-                    break;
-                }
-            }
-
-            if (validInput) {
-                num = std::stoi(input);
-
-                if (num >= 1000000 && num <= 9999999) {
-                    setBits(bitArray, num); // Устанавливаем биты для введенного числа
-                    numbers.push_back(num); // Добавляем число в список
-                }
-                else {
-                    std::cout << "Введите корректное семизначное число.\n";
-                }
-            }
-            else {
-                std::cout << "Введите корректное семизначное число.\n";
-            }
+        if (exercise == 0) {
+            break; // Выход из цикла при вводе 0
         }
 
-        // Сортировка семизначных чисел
-        sortNumbers(numbers, bitArray);
-
-        // Вывод отсортированных чисел
-        std::cout << "Отсортированные семизначные числа:\n";
-        for (int num : numbers) {
-            std::cout << num << " ";
+        if (exercise < 1 || exercise > 5) {
+            std::cout << "Некорректный выбор упражнения. Пожалуйста, выберите снова." << std::endl;
+            continue; // Переход к следующей итерации цикла
         }
-        std::cout << std::endl;
 
-        // Очистка битового массива и списка чисел для новой итерации
-        bitArray.assign(NUM_DIGITS, false);
-        numbers.clear();
+        switch (exercise) {
+        case 1: {
+            // Упражнение 1: Установить 1-ый, 5-ый и 7-ой бит в 1, используя маску (вариант 1)
+            unsigned int value1 = 0x00; // Исходное значение
 
-        // Проверка, хочет ли пользователь продолжить
-        char choice;
-        std::cout << "Хотите ввести еще числа? (y/n): ";
-        std::cin >> choice;
-        if (choice != 'y' && choice != 'Y') {
+            // Маска для установки битов в 1: 0b01001001
+            unsigned int mask1 = 0x49;
+
+            value1 |= mask1;
+
+            std::cout << "Результат упражнения 1: " << std::bitset<8>(value1) << std::endl;
             break;
         }
+        case 2: {
+            // Упражнение 2: Обнулить 2, 3, 4, 5 биты, используя маску (вариант 2)
+            unsigned int value2;
+            std::cout << "Введите значение переменной: ";
+            if (!(std::cin >> std::hex >> value2)) {
+                std::cout << "Ошибка при вводе. Пожалуйста, введите шестнадцатеричное значение." << std::endl;
+                std::cin.clear(); // Сброс состояния потока
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Очистка буфера ввода
+                continue; // Переход к следующей итерации цикла
+            }
 
-        // Очистка буфера ввода
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            // Маска для обнуления битов: 0b11110000
+            unsigned int mask2 = 0xF0;
+
+            value2 &= ~mask2;
+
+            std::cout << "Результат упражнения 2: " << std::bitset<8>(value2) << std::endl;
+            break;
+        }
+        case 3: {
+            // Упражнение 3: Умножить значение на 16
+            int value3;
+            std::cout << "Введите значение переменной: ";
+            if (!(std::cin >> value3)) {
+                std::cout << "Ошибка при вводе. Пожалуйста, введите целое число." << std::endl;
+                std::cin.clear(); // Сброс состояния потока
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Очистка буфера ввода
+                continue; // Переход к следующей итерации цикла
+            }
+
+            value3 <<= 4; // Сдвиг влево на 4 бита эквивалентен умножению на 16
+
+            std::cout << "Результат упражнения 3: " << value3 << std::endl;
+            break;
+        }
+        case 4: {
+            // Упражнение 4: Разделить значение на 8
+            int value4;
+            std::cout << "Введите значение переменной: ";
+            if (!(std::cin >> value4)) {
+                std::cout << "Ошибка при вводе. Пожалуйста, введите целое число." << std::endl;
+                std::cin.clear(); // Сброс состояния потока
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Очистка буфера ввода
+                continue; // Переход к следующей итерации цикла
+            }
+
+            value4 >>= 3; // Сдвиг вправо на 3 бита эквивалентен делению на 8
+
+            std::cout << "Результат упражнения 4: " << value4 << std::endl;
+            break;
+        }
+        case 5: {
+            // Упражнение 5: Установить n-ый бит в 1, используя маску (вариант 1)
+            int value5;
+            std::cout << "Введите значение переменной: ";
+            if (!(std::cin >> value5)) {
+                std::cout << "Ошибка при вводе. Пожалуйста, введите целое число." << std::endl;
+                std::cin.clear(); // Сброс состояния потока
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Очистка буфера ввода
+                continue; // Переход к следующей итерации цикла
+            }
+
+            int n;
+            std::cout << "Введите номер бита для установки в 1: ";
+            if (!(std::cin >> n) || n < 0 || n > 31) {
+                std::cout << "Ошибка при вводе номера бита. Пожалуйста, введите корректное значение." << std::endl;
+                std::cin.clear(); // Сброс состояния потока
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Очистка буфера ввода
+                continue; // Переход к следующей итерации цикла
+            }
+
+            // Маска для установки n-го бита в 1
+            int mask5 = 1 << n;
+
+            value5 |= mask5;
+
+            std::cout << "Результат упражнения 5: " << value5 << std::endl;
+            break;
+        }
+        }
     }
 
     return 0;
