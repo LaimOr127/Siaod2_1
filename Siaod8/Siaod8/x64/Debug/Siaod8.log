@@ -1,0 +1,4 @@
+﻿  Siaod8.cpp
+D:\Siaod_2CEM\Siaod8\Siaod8\Siaod8.cpp(50,21): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\Siaod_2CEM\Siaod8\Siaod8\Siaod8.cpp(230,2): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  Siaod8.vcxproj -> D:\Siaod_2CEM\Siaod8\x64\Debug\Siaod8.exe

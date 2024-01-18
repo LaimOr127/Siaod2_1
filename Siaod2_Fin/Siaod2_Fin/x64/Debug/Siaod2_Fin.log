@@ -1,0 +1,22 @@
+﻿  Siaod2_Fin.cpp
+D:\Siaod_2CEM\Siaod2_Fin\Siaod2_Fin\Siaod2_Fin.cpp(147,1): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\Siaod_2CEM\Siaod2_Fin\Siaod2_Fin\Siaod2_Fin.cpp(164,1): error C2664: "std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::read(_Elem *,std::streamsize)": невозможно преобразовать аргумент 1 из "std::string *" в "_Elem *"
+          with
+          [
+              _Elem=char
+          ]
+D:\Siaod_2CEM\Siaod2_Fin\Siaod2_Fin\Siaod2_Fin.cpp(164,27): message : Типы, на которые указывают указатели, не связаны; для преобразования требуется reinterpret_cast, приведение в стиле С или приведение в стиле функции в круглых скобках
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\istream(511,39): message : см. объявление "std::basic_istream<char,std::char_traits<char>>::read"
+D:\Siaod_2CEM\Siaod2_Fin\Siaod2_Fin\Siaod2_Fin.cpp(171,1): error C2664: "std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::read(_Elem *,std::streamsize)": невозможно преобразовать аргумент 1 из "std::string *" в "_Elem *"
+          with
+          [
+              _Elem=char
+          ]
+D:\Siaod_2CEM\Siaod2_Fin\Siaod2_Fin\Siaod2_Fin.cpp(171,27): message : Типы, на которые указывают указатели, не связаны; для преобразования требуется reinterpret_cast, приведение в стиле С или приведение в стиле функции в круглых скобках
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\istream(511,39): message : см. объявление "std::basic_istream<char,std::char_traits<char>>::read"
+D:\Siaod_2CEM\Siaod2_Fin\Siaod2_Fin\Siaod2_Fin.cpp(185,72): warning C4305: аргумент: усечение из "__int64" в "_Ty"
+          with
+          [
+              _Ty=int
+          ]
+D:\Siaod_2CEM\Siaod2_Fin\Siaod2_Fin\Siaod2_Fin.cpp(185,62): warning C4309: аргумент: усечение константного значения

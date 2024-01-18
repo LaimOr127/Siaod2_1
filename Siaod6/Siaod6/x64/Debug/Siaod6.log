@@ -1,0 +1,47 @@
+﻿  Siaod6.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\utility(190,48): warning C4267: инициализация: преобразование из "size_t" в "_Ty2"; возможна потеря данных
+          with
+          [
+              _Ty2=int
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\xutility(231): message : выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<int,int>::pair<int&,_Ty,0>(_Other1,_Other2 &&) noexcept"
+          with
+          [
+              _Ty=unsigned __int64,
+              _Other1=int &,
+              _Other2=unsigned __int64
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\xutility(238): message : выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<int,int>::pair<int&,_Ty,0>(_Other1,_Other2 &&) noexcept"
+          with
+          [
+              _Ty=unsigned __int64,
+              _Other1=int &,
+              _Other2=unsigned __int64
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\vector(829): message : выполняется компиляция ссылки на экземпляр шаблон функции "void std::_Construct_in_place<std::pair<int,int>,int&,_Ty>(std::pair<int,int> &,int &,_Ty &&) noexcept"
+          with
+          [
+              _Ty=unsigned __int64
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\vector(816): message : выполняется компиляция ссылки на экземпляр шаблон функции "_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<int&,unsigned __int64>(int &,unsigned __int64 &&)"
+          with
+          [
+              _Ty=std::pair<int,int>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\vector(822): message : выполняется компиляция ссылки на экземпляр шаблон функции "_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<int&,unsigned __int64>(int &,unsigned __int64 &&)"
+          with
+          [
+              _Ty=std::pair<int,int>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\vector(902): message : выполняется компиляция ссылки на экземпляр шаблон функции "_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_one_at_back<int&,unsigned __int64>(int &,unsigned __int64 &&)"
+          with
+          [
+              _Ty=std::pair<int,int>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\vector(904): message : выполняется компиляция ссылки на экземпляр шаблон функции "_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_one_at_back<int&,unsigned __int64>(int &,unsigned __int64 &&)"
+          with
+          [
+              _Ty=std::pair<int,int>
+          ]
+D:\Siaod_2CEM\Siaod6\Siaod6\Siaod6.cpp(51): message : выполняется компиляция ссылки на экземпляр шаблон функции "void std::vector<std::pair<int,int>,std::allocator<std::pair<int,int>>>::emplace_back<int&,unsigned __int64>(int &,unsigned __int64 &&)"
+  Siaod6.vcxproj -> D:\Siaod_2CEM\Siaod6\x64\Debug\Siaod6.exe

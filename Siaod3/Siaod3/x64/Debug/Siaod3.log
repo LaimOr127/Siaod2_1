@@ -1,0 +1,8 @@
+﻿  Siaod3.cpp
+D:\Siaod_2CEM\Siaod3\Siaod3\Siaod3.cpp(148,72): warning C4305: аргумент: усечение из "__int64" в "_Ty"
+          with
+          [
+              _Ty=int
+          ]
+D:\Siaod_2CEM\Siaod3\Siaod3\Siaod3.cpp(148,62): warning C4309: аргумент: усечение константного значения
+  Siaod3.vcxproj -> D:\Siaod_2CEM\Siaod3\x64\Debug\Siaod3.exe

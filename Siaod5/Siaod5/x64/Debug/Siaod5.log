@@ -1,0 +1,4 @@
+﻿  Siaod5.cpp
+D:\Siaod_2CEM\Siaod5\Siaod5\Siaod5.cpp(36,23): warning C4244: инициализация: преобразование "std::streamoff" в "long", возможна потеря данных
+D:\Siaod_2CEM\Siaod5\Siaod5\Siaod5.cpp(76,29): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Siaod5.vcxproj -> D:\Siaod_2CEM\Siaod5\x64\Debug\Siaod5.exe

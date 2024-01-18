@@ -1,0 +1,3 @@
+﻿  Siaod_Pripadchev_2.cpp
+D:\Siaod_2CEM\Siaod_Pripadchev_2\Siaod_Pripadchev_2\Siaod_Pripadchev_2.cpp(128,19): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Siaod_Pripadchev_2.vcxproj -> D:\Siaod_2CEM\Siaod_Pripadchev_2\x64\Debug\Siaod_Pripadchev_2.exe
